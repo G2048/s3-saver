@@ -1,0 +1,29 @@
+[project]
+name = "yandex-storage"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alive-progress>=3.2.0",
+    "boto3>=1.39.8",
+    "pydantic-settings>=2.10.1",
+    "pydantic[settigns,settings]>=2.11.7",
+]
+
+[tool.ruff.lint]
+dummy-variable-rgx = "^_$"
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "single"
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma=true
+combine-as-imports=true
+known-third-party = ["bound"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "PLC0414"]
+"examples/**" = ["N805", "N999", "RUF012"]
+"tests/**" = ["RUF012", "SIM115"]
